@@ -1,6 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import sanityClient from "../Client";
+import imageUrlBuilder from "@sanity/image-url";
+
+const builder = imageUrlBuilder(sanityClient);
+
+function urlFor(source) {
+	return builder.image(source);
+}
+
 const Category = ({ category }) => {
 	return (
 		<div
@@ -8,7 +17,7 @@ const Category = ({ category }) => {
 			style={{ backgroundColor: `#${category.hexCode}` }}
 		>
 			<img
-				src={category.image.asset.url}
+				src={urlFor(category.image).url()}
 				alt={category.title}
 				className="w-40"
 			/>

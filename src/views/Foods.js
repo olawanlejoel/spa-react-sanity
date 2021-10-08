@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import sanityClient from "../Client";
+import imageUrlBuilder from "@sanity/image-url";
+
+const builder = imageUrlBuilder(sanityClient);
+
+function urlFor(source) {
+	return builder.image(source);
+}
 
 // import foodImage from "../images/protein/001.jpg";
 
@@ -59,8 +66,8 @@ const Foods = () => {
 							>
 								<div className="flex flex-col items-center">
 									<img
-										src={food.foodImage.asset.url}
-										alt=""
+										src={urlFor(food.foodImage).width(200).url()}
+										alt={food.title}
 										className="rounded-full object-cover w-40 h-40 border-4 shadow-inner std-border"
 									/>
 									<h4 className="text-2xl pt-3 font-bold capitalize">
