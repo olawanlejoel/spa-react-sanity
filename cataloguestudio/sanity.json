@@ -4,8 +4,9 @@
     "name": "catalogue-studio"
   },
   "api": {
-    "projectId": "sajbh0gu",
-    "dataset": "production"
+    "projectId": "6u9jpdkr",
+    "dataset": "production",
+    "apikey": "skFlcCSO8qrLQaBn76ellWje9NVvw9HvkaLLFTAnyndqemKorJjqxY9oB8A4oTCtNwgji5yi19spi1CW6ZytK4DMoDtEMHUcTeDfJratdyutaE6qxYlPBsH6caCAuJ2l3J4zoew6ruW2abcbRHHZHuLvLdTG4xOLWWMY0l6RzU3N5AnBOVtP"
   },
   "plugins": [
     "@sanity/base",
@@ -16,9 +17,7 @@
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [
